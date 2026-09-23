@@ -531,6 +531,142 @@
         <span class="tag">Naturaleza de Tenerife</span>
         <span class="tag">Psicología del consumidor</span>
       </div>
+      <!-- ============================================================
+     BOTÓN CURRÍCULUM — CUMBRE — Evelin A. Medina Mesa
+     Copia todo este bloque y pégalo en tu página
+     donde quieras que aparezca el botón de Ver Currículum
+     ============================================================ -->
+
+<!-- BOTÓN -->
+<button onclick="abrirCV()" style="
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: transparent;
+  border: 0.5px solid rgba(74,127,165,0.5);
+  padding: 11px 28px;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 9px;
+  font-weight: 300;
+  letter-spacing: 0.26em;
+  color: #4a7fa5;
+  text-transform: uppercase;
+  margin-top: 16px;
+">
+  Ver currículum →
+</button>
+
+<!-- VENTANA MODAL -->
+<div id="cv-modal" style="
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(5,4,3,0.92);
+  z-index: 9999;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  backdrop-filter: blur(8px);
+">
+  <div style="
+    position: relative;
+    width: 90%;
+    max-width: 820px;
+    height: 88vh;
+    background: #0d0b0a;
+    border: 0.5px solid rgba(74,127,165,0.4);
+    display: flex;
+    flex-direction: column;
+  ">
+    <!-- Cabecera modal -->
+    <div style="
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 20px;
+      border-bottom: 0.5px solid rgba(74,127,165,0.2);
+      flex-shrink: 0;
+    ">
+      <span style="
+        font-family: 'DM Sans', sans-serif;
+        font-size: 9px;
+        font-weight: 300;
+        letter-spacing: 0.26em;
+        color: rgba(245,240,232,0.4);
+        text-transform: uppercase;
+      ">Currículum Vitae — Evelin A. Medina Mesa</span>
+
+      <div style="display:flex; align-items:center; gap:12px;">
+        <!-- Botón descargar -->
+        <a id="cv-download" download="CV_Evelin_Medina_Mesa.pdf" style="
+          background: #4a7fa5;
+          color: #f5f0e8;
+          font-family: 'DM Sans', sans-serif;
+          font-size: 9px;
+          font-weight: 300;
+          letter-spacing: 0.2em;
+          padding: 7px 16px;
+          text-decoration: none;
+          text-transform: uppercase;
+          transition: background 0.2s;
+        ">Descargar PDF</a>
+
+        <!-- Botón cerrar -->
+        <button onclick="cerrarCV()" style="
+          background: none;
+          border: 0.5px solid rgba(245,240,232,0.2);
+          color: rgba(245,240,232,0.5);
+          font-size: 14px;
+          width: 28px;
+          height: 28px;
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transition: all 0.2s;
+        ">✕</button>
+      </div>
+    </div>
+
+    <!-- Visor PDF -->
+    <iframe id="cv-iframe" style="
+      width: 100%;
+      flex: 1;
+      border: none;
+      background: #0d0b0a;
+    "></iframe>
+  </div>
+</div>
+
+<!-- SCRIPT -->
+<script>
+const cvBase64 = "JVBERi0xLjQKJZOMi54gUmVwb3J0TGFiIEdlbmVyYXRlZCBQREYgZG9jdW1lbnQgKG9wZW5zb3VyY2UpCjEgMCBvYmoKPDwKL0YxIDIgMCBSIC9GMiAzIDAgUiAvRjMgNCAwIFIKPj4KZW5kb2JqCjIgMCBvYmoKPDwKL0Jhc2VGb250IC9IZWx2ZXRpY2EgL0VuY29kaW5nIC9XaW5BbnNpRW5jb2RpbmcgL05hbWUgL0YxIC9TdWJ0eXBlIC9UeXBlMSAvVHlwZSAvRm9udAo+PgplbmRvYmoKMyAwIG9iago8PAovQmFzZUZvbnQgL0hlbHZldGljYS1Cb2xkIC9FbmNvZGluZyAvV2luQW5zaUVuY29kaW5nIC9OYW1lIC9GMiAvU3VidHlwZSAvVHlwZTEgL1R5cGUgL0ZvbnQKPj4KZW5kb2JqCjQgMCBvYmoKPDwKL0Jhc2VGb250IC9IZWx2ZXRpY2EtT2JsaXF1ZSAvRW5jb2RpbmcgL1dpbkFuc2lFbmNvZGluZyAvTmFtZSAvRjMgL1N1YnR5cGUgL1R5cGUxIC9UeXBlIC9Gb250Cj4+CmVuZG9iago1IDAgb2JqCjw8Ci9Db250ZW50cyA5IDAgUiAvTWVkaWFCb3ggWyAwIDAgNTk1LjI3NTYgODQxLjg4OTggXSAvUGFyZW50IDggMCBSIC9SZXNvdXJjZXMgPDwKL0V4dEdTdGF0ZSA8PAovZ1JMczAgPDwKL2NhIC4xNQo+Pgo+PiAvRm9udCAxIDAgUiAvUHJvY1NldCBbIC9QREYgL1RleHQgL0ltYWdlQiAvSW1hZ2VDIC9JbWFnZUkgXQo+PiAvUm90YXRlIDAgL1RyYW5zIDw8Cgo+PiAKICAvVHlwZSAvUGFnZQo+PgplbmRvYmoKNiAwIG9iago8PAovUGFnZU1vZGUgL1VzZU5vbmUgL1BhZ2VzIDggMCBSIC9UeXBlIC9DYXRhbG9nCj4+CmVuZG9iago3IDAgb2JqCjw8Ci9BdXRob3IgKGFub255bW91cykgL0NyZWF0aW9uRGF0ZSAoRDoyMDI2MDkyMzA3NDYyNCswMCcwMCcpIC9DcmVhdG9yIChhbm9ueW1vdXMpIC9LZXl3b3JkcyAoKSAvTW9kRGF0ZSAoRDoyMDI2MDkyMzA3NDYyNCswMCcwMCcpIC9Qcm9kdWNlciAoUmVwb3J0TGFiIFBERiBMaWJyYXJ5IC0gXChvcGVuc291cmNlXCkpIAogIC9TdWJqZWN0ICh1bnNwZWNpZmllZCkgL1RpdGxlICh1bnRpdGxlZCkgL1RyYXBwZWQgL0ZhbHNlCj4+CmVuZG9iago4IDAgb2JqCjw8Ci9Db3VudCAxIC9LaWRzIFsgNSAwIFIgXSAvVHlwZSAvUGFnZXMKPj4KZW5kb2JqCjkgMCBvYmoKPDwKL0ZpbHRlciBbIC9BU0NJSTg1RGVjb2RlIC9GbGF0ZURlY29kZSBdIC9MZW5ndGggMjgwNwo+PgpzdHJlYW0KR2F1MEY5NjhpSScjKls1VF1ScGNSQDU4Ok1aRUxZTUNtL1NgWGUnMVYiVUdoOVlpSy42ckhCRWZoLV9sMkYlay03KXRWIUVbO0dIbTcpVSg2OWgrUydZdUhecl8uQmQ1MGhOMS50UyRxWlVbRENrJUpwdDdeRSxVNyRLKlEsTC1SWW5BdTs4QFQ0b2FLZl5kdEpaMD48O09oLWtKQC4vcm5eZGRnJlA2RjUjPzIqckxKT203NyFGYDNNMFZNYyNBSVhDLDBVXSg/ak9lWDdOdC5JaFptOFZzMiZLIjEuKGRtQFRNXmxdMFwoRko7Qy1hLCVISzY4TDJHRylUUDdjIVgnbFldQWMnZiVAO2tAUF1UMSNebGlhVkVxLF9ISVhsKFdIITVtOzZPSXQhNnVuKzg7WENxcC8nbGFbaEZkKGRRT15nOUoldCVaKE9oNztOUD11InMwLyMiZitEMzsiLkxlL0Q3MnVpQUpFNWhFPm1laG8pdUE+U2dNJ3NIOz5gaCxOL18nMjlYQiNVWCxfJG5MWVlnRj5MS0poW1xXKklZZC1OOHAnVWZrMlVSNXItYFRFU1IoJldPNypYPkJQXjc+Xi1mNyxUXDZNTE9bITQnU0tSRjplTlYiQzpBWzosK3UoTEpecSE8cU0xQnVcXG09KWNWa15qKCJ0LVpNO1pxZ2UjVFw6Wm1SS0E+TSZSIl9lSSpNKTtIT05yMyJUVDZRclIyTjRURlMiZkBeTS9BS0YxMGEwJUM2UXBtL3Q4OSI+R2YlRnRMUjMzVkQyPTpSSXJcQkQ1WVNNWi5NQFldPyFVLWomR19CUnExcW43PWhyZXE6JS89JE5pJFByVk8kP25bMEFqUFsmTF1xKUZXZ0ZpNVNtRiREcnJUXyVzaXBGIyRsJD5ySkVPXW9zQCZPZ0hxT2kpKyRZJThBSk8+MGNTci9WVzRgKXE7ITMnSmdvVjtRdVRnZjI3aC5nWHRqOjxAKU5yYStDa15IVzhMQmVCMio3O25zRCJhYiNXYSZAQCItWG9MYVxsUSpScElSRCxKPFpuJkBda0MzcSpOaiRLYi5cbG4kSmt1bFMvYiJvb2ApVmFGalcjMTE1UV9qbUtUb21XI3JsRURkVy8zQkEnYTBgbCR1K3BKcSo/QU10QTlXNlRmUnFWJFYqPk11bDtYI0tKdTRWYzpqWSVnRFgtRik7JXRZTixhJ101V1QvVDFxaztiODFCSi5SSDB1R0MpNVpvbFhiRjpkKCxjakNPZEZLakw7a0tmSShHT15wKlAwcitmKz06YlkvLipML09WNThpQm42RGI6TSZiTi87NlhPMSxcZGtwKF10OTxcQiFwQkM6U1JiO1U8J3VgaENAb1Y2VlhNWmVncCg4aDZZcWZwQiEuNFU8JDg9Z0VNbEAkImclJSdLXzZHKjM4VFpfYD1AbjZEYjpNJmJOLzYqUip1TTM4dGU1V1FhcipqPSVtamwvRXA0bzxNQktHTi9EaUEuSC1SVichaidYaiJiQzFDIyIhZW1NNWA7PFZlOGg/bkhZNiVeaz1LXXEiL0w/QC1rOTwmXGo6RXUnIVltRE0uTlV0WS4jMyZhailuUDU+ZURHYEJBWV9FZCxNWEFbR0ZsL0EhWWYxKkJFYVQkaks9Q1tjYCMkMXBQYk0jKkhkSEVjbyowLkE/Mm4oWzRMOExOb05dSkpMTzUlWFxkc3EmdUAhR2Ila2UoW2pyXGZscDNLXCUnYFhxLShaWS0lcDElZC0zaShbViQ1SV9CO3NMaVh0UjBeZ0t0VFFITUEvO2g/LTY+YmlhKCo5JSxmQCpnaWhAX2k0VTkoX1YrYTZVKklcVGduSmNiOzE+XztpKzVUU2puMzQjQk1BLVtXQ0JCaDlMW2k6XjozZlEpK1BCSVRZMDRXIT9TLCk6RTpnTU5HQEBKKzlbOGU6SEZhNlUqSVxUZ25KY2I9SjNddUBCc1QwL0NjSiJPa0BSZkFOYz1kblNcLyIiKDU0VyhWMWRXa2QlNVlFQ2lLUWRERWImVlhNQmRtSUU0O1s2UiwpOkRPMFZEXidPdDZrQzFxUSs7aVVKdDI9dFxacWU/ZVY2Xy5bZ28rXi9EQixROy5GZF9fNT1YWVtkP19rPTNLcmwpYFNgbWA1QWJLcENnIWdBVyc9NiZWWXFuJm1oLEBWTGlxaGc8YWlWVXMtNWEnbGVaISFORSlRaEE0PkFRb3JjUFwpZmRdNilmRyFuVk48TkxJZkozXW9WVSFYTilnRWdbJnBubmRLPVwpVFY4cjMxXl41VkhLKi9uO11ZcUtmR2ZtZ2R1Xyg5VVBOXyItZFIqclgtU1pyKThDQzxnU19PYlsybVNDcTBKczhccFNwYXU4ISJqcFo5SC5WTTIjVEk+a1FVZiNGbyk8MWRvW2VOZmZsTHE5JWZoYzdGTl1XOV5pVzAjOzxoRFcuLzchJlg0Q2hEOTs6U2o2a0QpTTxAYXEjXW5XclJqSWFRNSQkT200Kj9cb0FRKmA3UVowZiMwcGspNE1iRnArQHVKWEhhMzcwMWg6VTRqMTF1ZCgrKStqLmFvWWs2PFNrLmsxb1xWZjtuRj1vaC9Db0JiL3QnWiFZJnBEUVc1aEVKYUBCWlFfcVAoSmxbP2BTXVlfPUsrLnUwWFlhOjBZTSVmO2o0QUhiMjZVPCExcls9Ml5FTFgocVs2VWlwKlpDNGgmVGEnIjZzYHAvTzdNNStCWC05VUFVPGxZaDVMcDl0KU9lWVVNSnFZO1NoPzRfLShAPSdGYDRIODhLc28/N21mTkpzQGxfI1wnUVQjMnA9OVhTaCswbDBMLU9FaUdCQ2wnTUI5T2MsSGBhN0lxRGhdKGczTVlzN1YhI1IoSi9ETnRfT0EhXyNaQktsYHA3YCE6RmBFRjhUR0csPSxTSVhDVF8rN1UmQTxeNzsybCU4bD5ASi9tJj9QbSVnazQmSDVYPj9WRkhdNVkwQU1IRjNmSytDZS9jbVJxdS82XURxWTtwbidyUjBvZUZXXC5fYW8zWksqPDZqQVlbO2leWmFwNzZwOWFRO19HSmdGMzJxO1Y8X0ZNUDc2TmArbVVsQEJPQFcldEAidTUiJl06LUI9TzNTYm0lU2A2JWctZj9OSlRrXHEubD0vPT51blorbyZyLU1ma3M9ZCRBIytHWFYvRjRmbUpNOj4vUyomVVptI0ZIU0ldcTpjS3BSUXFVbU9WbjYpIklrQlAtKzgxNDNRKDhpQk5HRSVsKVZpdF0uJ2QpRkkuRlwiSVJgJmhHZU9XL0sjJi5nJ1IoKFVxJWY4RGhbaSJicCImaVJsWjRHPz8lTzNVOWdwIWZwOzRdLysiXFZXK0tLUWhyRkluXEFVQk9rWk9OaTZSPUREVzQxX0IhaF5sc3AnUT5FQCVKN2VoRCpaI2hxZHNKR0Ahbm5wWiUwYSxdazBFWzVVdDxPXkNEZFosLS1dR0B1Nk1zZ1EsS0BAV10vXz40O0BrXy5tSDsuTlVDKFNRI1MsS2xyMTteMik5TGBuYltpaEsnTUNIdU0/ZUZdaTVjLytaLiZPUDRWIz9pVVopVHI0SUsqYDxTdFY8R1txNTUtMGo9biRRQV0kMjxISzhsTHBUQS1iTURdZWhcSlhUJz9ZTz1lMltQWzBkZkBUP1cwPCROMU9cZDs7RDVwYSpvc1BzTjdVR3EtNVxqWlktNV9zUWtoRVtmVigpPmchR0xzZSZTU2cufj5lbmRzdHJlYW0KZW5kb2JqCnhyZWYKMCAxMAowMDAwMDAwMDAwIDY1NTM1IGYgCjAwMDAwMDAwNjEgMDAwMDAgbiAKMDAwMDAwMDExMiAwMDAwMCBuIAowMDAwMDAwMjE5IDAwMDAwIG4gCjAwMDAwMDAzMzEgMDAwMDAgbiAKMDAwMDAwMDQ0NiAwMDAwMCBuIAowMDAwMDAwNjg3IDAwMDAwIG4gCjAwMDAwMDA3NTUgMDAwMDAgbiAKMDAwMDAwMTAxNiAwMDAwMCBuIAowMDAwMDAxMDc1IDAwMDAwIG4gCnRyYWlsZXIKPDwKL0lEIApbPDQ2OTUzMjMwOTRlYmE5MmE4NmU3OGYwNjJhZTlmOTY1Pjw0Njk1MzIzMDk0ZWJhOTJhODZlNzhmMDYyYWU5Zjk2NT5dCiUgUmVwb3J0TGFiIGdlbmVyYXRlZCBQREYgZG9jdW1lbnQgLS0gZGlnZXN0IChvcGVuc291cmNlKQoKL0luZm8gNyAwIFIKL1Jvb3QgNiAwIFIKL1NpemUgMTAKPj4Kc3RhcnR4cmVmCjM5NzMKJSVFT0YK";
+
+function abrirCV() {
+  const binary = atob(cvBase64);
+  const bytes = new Uint8Array(binary.length);
+  for (let i = 0; i < binary.length; i++) bytes[i] = binary.charCodeAt(i);
+  const blob = new Blob([bytes], { type: 'application/pdf' });
+  const url = URL.createObjectURL(blob);
+  document.getElementById('cv-iframe').src = url;
+  document.getElementById('cv-download').href = url;
+  document.getElementById('cv-modal').style.display = 'flex';
+}
+
+function cerrarCV() {
+  document.getElementById('cv-modal').style.display = 'none';
+  document.getElementById('cv-iframe').src = '';
+}
+
+document.getElementById('cv-modal').addEventListener('click', function(e) {
+  if (e.target === this) cerrarCV();
+});
+</script>
+
+<!-- FIN BOTÓN CURRÍCULUM -->
+
     </div>
   </div>
 </section>
