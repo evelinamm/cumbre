@@ -163,20 +163,20 @@ overflow-y:auto;
   }
   .sectionSub{color:var(--ink-dim);font-size:1.02rem;margin-top:1.4rem;max-width:640px;line-height:1.7;}
 
-  /* ---------- Sobre Cumbre ---------- */
-  #Sobre Cumbre{background:var(--volcanic);border-top:1px solid rgba(232,226,214,.08);}
-  .Sobre CumbreGrid{
+    /* ---------- sinopsis ---------- */
+  #sinopsis{background:var(--volcanic);border-top:1px solid rgba(232,226,214,.08);}
+.sinopsisGrid{
     max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4.5rem;align-items:start;
-  }
-  .Sobre CumbreBody p{
+}
+.sinopsisBody p{
     color:var(--ink-dim);line-height:1.9;font-size:1.05rem;font-weight:300;margin-bottom:1.5rem;
-  }
-  .Sobre CumbreBody p:first-child{
+}
+.sinopsisBody p:first-child{
     font-family:var(--serif);font-style:italic;color:var(--foam);font-size:1.2rem;line-height:1.7;
-  }
+}
   @media (max-width:860px){
-    .Sobre CumbreGrid{grid-template-columns:1fr;gap:2rem;}
-  }
+.sinopsisGrid{grid-template-columns:1fr;gap:2rem;}
+}
 
   /* ---------- filmografia ---------- */
   #filmografia{background:linear-gradient(180deg,var(--volcanic) 0%,var(--volcanic-2) 100%);}
@@ -441,7 +441,7 @@ overflow-y:auto;
   </a>
   <button class="navToggle" id="navToggle" aria-label="Menú"><span></span><span></span><span></span></button>
   <nav><ul id="navList">
-    <li><a href="#sinopsis">Sinopsis</a></li>
+    <li><a href="#sinopsis">Sobre Cumbre</a></li>
     <li><a href="#filmografia">Campañas</a></li>
     <li><a href="#directora">Sobre mí</a></li>
     <li><a href="#creditos">Contacto</a></li>
@@ -461,19 +461,19 @@ overflow-y:auto;
     </svg>
     <h1 class="title">CUMBRE</h1>
     <p class="tagline">El punto más alto de cada historia.</p>
-    <a href="#filmografia" class="ctaLink">Ver las Campañas →</a>
+   <a href="#filmografia" class="ctaLink">Ver campañas →</a>
   </div>
 </section>
 
-<!-- Sobre Cumbre -->
+<!-- SINOPSIS -->
 <section id="sinopsis">
-  <div class="Sobre CumbreGrid">
+  <div class="sinopsisGrid">
     <div class="sectionHead reveal" style="margin-bottom:0;">
       <span class="kicker">Sobre Cumbre</span>
       <h2 class="sectionTitle">No busco la cima. Busco el instante en que algo se siente de verdad.</h2>
     </div>
-    <div class="Sobre CumbreBody reveal">
-      <p>Creo que la publicidad, como el cine, no se sostiene en lo que vende, sino en lo que hace sentir. Porque lo que sentimos es, muchas veces, lo que termina quedándose con nosotros. Y toda historia tiene un segundo exacto capaz de conseguirlo: ese en el que dejas de mirarla desde fuera y te reconoces en ella. A ese instante lo llamo cumbre.</p>
+    <div class="sinopsisBody reveal">
+      <p>Creo que la publicidad, como el cine, no se sostiene en lo que vende, sino en lo que hace sentir. Toda historia tiene un segundo exacto en el que dejas de mirarla desde fuera y te reconoces en ella. A ese instante lo llamo cumbre.</p>
       <p>No es el golpe de efecto ni el final feliz. Es más simple y más difícil: es cuando una emoción humana, deja de ser ajena y se vuelve real durante un momento. Todo lo que hago busca llegar ahí, aunque solo sea un segundo.</p>
       <p>Soy de una isla donde la luz cambia de humor varias veces al día, y donde el mar sube y baja como si las emociones también tuvieran marea: se retiran, y por un momento crees que se han ido del todo, hasta que vuelven a subir sin avisar. Quizá por eso aprendí a fijarme en los instantes antes que en los paisajes. Por eso cada proyecto de este portfolio se cuenta como una película: para entrenar el ojo en encontrar esa cumbre, una y otra vez, hasta que se convierta en oficio.</p>
     </div>
@@ -700,7 +700,7 @@ overflow-y:auto;
 
 <!-- MODAL -->
 <div id="modalOverlay">
-  <button class="modalClose" id="modalClose">✕ Volver a las Campañas</button>
+  <button class="modalClose" id="modalClose">✕ Volver a Campañas</button>
   <div class="modalInner" id="modalInner"></div>
 </div>
 
