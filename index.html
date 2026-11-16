@@ -163,19 +163,19 @@ overflow-y:auto;
   }
   .sectionSub{color:var(--ink-dim);font-size:1.02rem;margin-top:1.4rem;max-width:640px;line-height:1.7;}
 
-  /* ---------- sinopsis ---------- */
-  #sinopsis{background:var(--volcanic);border-top:1px solid rgba(232,226,214,.08);}
-  .sinopsisGrid{
+  /* ---------- Sobre Cumbre ---------- */
+  #Sobre Cumbre{background:var(--volcanic);border-top:1px solid rgba(232,226,214,.08);}
+  .Sobre CumbreGrid{
     max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4.5rem;align-items:start;
   }
-  .sinopsisBody p{
+  .Sobre CumbreBody p{
     color:var(--ink-dim);line-height:1.9;font-size:1.05rem;font-weight:300;margin-bottom:1.5rem;
   }
-  .sinopsisBody p:first-child{
+  .Sobre CumbreBody p:first-child{
     font-family:var(--serif);font-style:italic;color:var(--foam);font-size:1.2rem;line-height:1.7;
   }
   @media (max-width:860px){
-    .sinopsisGrid{grid-template-columns:1fr;gap:2rem;}
+    .Sobre CumbreGrid{grid-template-columns:1fr;gap:2rem;}
   }
 
   /* ---------- filmografia ---------- */
@@ -442,9 +442,9 @@ overflow-y:auto;
   <button class="navToggle" id="navToggle" aria-label="Menú"><span></span><span></span><span></span></button>
   <nav><ul id="navList">
     <li><a href="#sinopsis">Sinopsis</a></li>
-    <li><a href="#filmografia">Filmografía</a></li>
-    <li><a href="#directora">La Directora</a></li>
-    <li><a href="#creditos">Créditos</a></li>
+    <li><a href="#filmografia">Campañas</a></li>
+    <li><a href="#directora">Sobre mí</a></li>
+    <li><a href="#creditos">Contacto</a></li>
   </ul></nav>
 </header>
 
@@ -461,18 +461,18 @@ overflow-y:auto;
     </svg>
     <h1 class="title">CUMBRE</h1>
     <p class="tagline">El punto más alto de cada historia.</p>
-    <a href="#filmografia" class="ctaLink">Ver la filmografía →</a>
+    <a href="#filmografia" class="ctaLink">Ver las Campañas →</a>
   </div>
 </section>
 
-<!-- SINOPSIS -->
+<!-- Sobre Cumbre -->
 <section id="sinopsis">
-  <div class="sinopsisGrid">
+  <div class="Sobre CumbreGrid">
     <div class="sectionHead reveal" style="margin-bottom:0;">
-      <span class="kicker">Sinopsis</span>
+      <span class="kicker">Sobre Cumbre</span>
       <h2 class="sectionTitle">No busco la cima. Busco el instante en que algo se siente de verdad.</h2>
     </div>
-    <div class="sinopsisBody reveal">
+    <div class="Sobre CumbreBody reveal">
       <p>Creo que la publicidad, como el cine, no se sostiene en lo que vende, sino en lo que hace sentir. Porque lo que sentimos es, muchas veces, lo que termina quedándose con nosotros. Y toda historia tiene un segundo exacto capaz de conseguirlo: ese en el que dejas de mirarla desde fuera y te reconoces en ella. A ese instante lo llamo cumbre.</p>
       <p>No es el golpe de efecto ni el final feliz. Es más simple y más difícil: es cuando una emoción humana, deja de ser ajena y se vuelve real durante un momento. Todo lo que hago busca llegar ahí, aunque solo sea un segundo.</p>
       <p>Soy de una isla donde la luz cambia de humor varias veces al día, y donde el mar sube y baja como si las emociones también tuvieran marea: se retiran, y por un momento crees que se han ido del todo, hasta que vuelven a subir sin avisar. Quizá por eso aprendí a fijarme en los instantes antes que en los paisajes. Por eso cada proyecto de este portfolio se cuenta como una película: para entrenar el ojo en encontrar esa cumbre, una y otra vez, hasta que se convierta en oficio.</p>
@@ -483,7 +483,7 @@ overflow-y:auto;
 <!-- FILMOGRAFIA -->
 <section id="filmografia">
   <div class="sectionHead reveal">
-    <span class="kicker">Filmografía</span>
+    <span class="kicker">Campañas</span>
     <h2 class="sectionTitle">Cada proyecto es una película.</h2>
     <p class="sectionSub">No son simples trabajos: tienen inicio, conflicto, desarrollo y resolución. Entra en cada ficha para ver la historia completa.</p>
     <div class="scaleLegend">
@@ -498,7 +498,7 @@ overflow-y:auto;
 <!-- DIRECTORA -->
 <section id="directora">
   <div class="sectionHead reveal" style="margin-bottom:4.5rem;">
-    <span class="kicker">Ficha de la Directora</span>
+    <span class="kicker">Sobre mí</span>
   </div>
   <div class="directoraGrid reveal">
     <div>
@@ -685,7 +685,7 @@ overflow-y:auto;
 <section id="creditos">
   <div class="creditsViewport">
     <div class="creditsRoll" id="creditsRoll">
-      <span class="kicker">Créditos</span>
+      <span class="kicker">Contacto</span>
       <div class="role">Dirección creativa</div>
       <p>Evelin A. Medina Mesa</p>
       <div class="role">Contacto</div>
@@ -700,7 +700,7 @@ overflow-y:auto;
 
 <!-- MODAL -->
 <div id="modalOverlay">
-  <button class="modalClose" id="modalClose">✕ Volver a la filmografía</button>
+  <button class="modalClose" id="modalClose">✕ Volver a las Campañas</button>
   <div class="modalInner" id="modalInner"></div>
 </div>
 
